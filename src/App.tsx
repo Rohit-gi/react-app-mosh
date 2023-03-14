@@ -43,7 +43,7 @@ function App(){
 
   return(
     <div>
-      <Like onCLick={() => console.log('clicked')}/>
+      <Like onClick={() => console.log('clicked')}/>
     </div>
   );
 }
