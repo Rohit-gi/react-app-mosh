@@ -1,4 +1,7 @@
-// import { useState } from "react";
+import { useState } from "react";
+// import NavBar from "./components/NavBar";
+// import Cart from "./components/Cart";
+
 // import Alert from "./components/Alert";
 // import Button from "./components/Button";
 // import ListGroup from "./components/ListGroup";
@@ -37,15 +40,41 @@
 // }
 // export default App;
 
-import Like from "./components/ListGroup/Like";
+// import Like from "./components/ListGroup/Like";
 
-function App(){
+// function App(){
 
-  return(
-    <div>
-      <Like onClick={() => console.log('clicked')}/>
-    </div>
-  );
-}
+//   return(
+//     <div>
+//       <Like onClick={() => console.log('clicked')}/>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
+
+// function App() {
+//   const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
+
+//   return (
+//     <div>
+//       <NavBar cartItemsCount={cartItems.length} />
+//       <Cart cartItems={cartItems} onClear={()=> setCartItems([])} />
+//     </div>
+//   );
+// }
+
+// export default App
+
+// function App(){
+//   const [game, setGame] = useState({
+//     id:1,
+//     player: {
+//         name: "John";
+//     },
+//   });
+// }
+
+//   const handleClick = () => {
+  
+//   }
