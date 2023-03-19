@@ -1,7 +1,4 @@
 import { useState } from "react";
-// import NavBar from "./components/NavBar";
-// import Cart from "./components/Cart";
-
 // import Alert from "./components/Alert";
 // import Button from "./components/Button";
 // import ListGroup from "./components/ListGroup";
@@ -54,27 +51,26 @@ import { useState } from "react";
 // export default App;
 
 // function App() {
-//   const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
-
-//   return (
-//     <div>
-//       <NavBar cartItemsCount={cartItems.length} />
-//       <Cart cartItems={cartItems} onClear={()=> setCartItems([])} />
-//     </div>
-//   );
-// }
-
-// export default App
-
-// function App(){
-//   const [game, setGame] = useState({
-//     id:1,
-//     player: {
-//         name: "John";
-//     },
+//   const [pizza, setPizza] = useState({
+//     name: "Spicy Pepperoni",
+//     toppings: ["Mushroom"],
 //   });
 // }
 
-//   const handleClick = () => {
-  
-//   }
+function App(){
+  const [cart, setCart] = useState({
+    discount: .1;
+    items: [
+      {id:1, title: 'Product 1', quantity: 1}
+      {id:2, title: 'Product 2', quantity: 1}
+    ]
+  }
+});
+
+const handleClick = () =>{
+
+setCart ({...cart, items: cart.items.map(item => item.id === 1 ? {...item, quantity: item.quantity + 1 }: item)})
+
+}
+
+export default App;
