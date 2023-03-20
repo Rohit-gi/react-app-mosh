@@ -60,7 +60,7 @@ import ExpandableText from "./components/ExpandableText";
 
 // function App(){
 //   const [cart, setCart] = useState({
-    //  discount: .1;
+//  discount: .1;
 //     items: [
 //       {id:1, title: 'Product 1', quantity: 1}
 //       {id:2, title: 'Product 2', quantity: 1}
@@ -74,14 +74,24 @@ import ExpandableText from "./components/ExpandableText";
 
 // }
 
+// function App() {
+//     return(
+//         <div>
+//             <ExpandableText maxChars={10}>
+//                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed velit pariatur et iste commodi, aut repudiandae fugit blanditiis amet cumque consequatur, fugiat dignissimos nesciunt distinctio doloremque suscipit cupiditate veniam id earum ducimus tenetur deserunt nam libero! Consequatur vero accusamus reprehenderit vel modi quia architecto tenetur aperiam animi ex molestiae sint dignissimos natus ipsum, illo dolores odio? Nam dolore doloremque provident tempora, cumque sint nobis dolorem beatae. Exercitationem, sapiente vitae eum temporibus accusamus distinctio praesentium at cumque in velit quas voluptates natus tenetur quasi culpa? Ipsam est impedit rerum, commodi exercitationem blanditiis provident error reprehenderit quod? Odio, consequatur possimus. Voluptas?
+//             </ExpandableText>
+//         </div>
+//     )
+// }
+
+import Form from "./components/Form";
+
 function App() {
-    return(
-        <div>
-            <ExpandableText maxChars={10}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed velit pariatur et iste commodi, aut repudiandae fugit blanditiis amet cumque consequatur, fugiat dignissimos nesciunt distinctio doloremque suscipit cupiditate veniam id earum ducimus tenetur deserunt nam libero! Consequatur vero accusamus reprehenderit vel modi quia architecto tenetur aperiam animi ex molestiae sint dignissimos natus ipsum, illo dolores odio? Nam dolore doloremque provident tempora, cumque sint nobis dolorem beatae. Exercitationem, sapiente vitae eum temporibus accusamus distinctio praesentium at cumque in velit quas voluptates natus tenetur quasi culpa? Ipsam est impedit rerum, commodi exercitationem blanditiis provident error reprehenderit quod? Odio, consequatur possimus. Voluptas?
-            </ExpandableText>
-        </div>
-    )
+  return (
+    <div>
+      <Form/>
+    </div>
+  );
 }
 
 export default App;
