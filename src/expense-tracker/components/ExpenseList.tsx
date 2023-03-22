@@ -6,12 +6,15 @@ interface Expense {
   amount: number;
   category: string;
 }
+
 interface Props {
   expenses: Expense[];
   onDelete: (id: number) => void;
 }
 
 const ExpenseList = ({ expenses, onDelete }: Props) => {
+  if (expenses.length === 0) return null;
+
   return (
     <div>
       <table className="table table-bordered">
@@ -30,11 +33,24 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
               <td>{expense.amount}</td>
               <td>{expense.category}</td>
               <td>
-                <button className="btn btn-outline-danger">Delete</button>
+                <button
+                  className="btn btn-outline-danger"
+                  onClick={() => onDelete(expense.id)}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td>$ {expenses.reduce((acc, expense) => expense.amount + acc, 0).toFixed(2)}</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tfoot>
       </table>
     </div>
   );
