@@ -133,27 +133,131 @@
 
 // export default App;
 
-import {useEffect, useRef} from "react";
+// import {useEffect, useRef} from "react";
+
+// function App() {
+//   const ref = useRef<HTMLInputElement>(null);
+// });
+
+// //afterRender
+// useEffect(()=>{
+// // Side effect
+// if (ref.current) ref.current.focus();
+// });
+
+// useEffect(() =>{
+//   document.title = 'My App';
+// })
+
+// return (
+//   <div>
+//     <input ref={ref} type="text" className="form-control"/>
+//   </div>
+// );
+// }
+
+// export default App;
+// function App() {
+//   const [selectedCategory, setSelectedCategory] = useState("");
+//   const [expenses, setExpenses] = useState([
+//     { id: 1, description: "aaa", amount: 10, category: "Utilities" },
+//     { id: 2, description: "bbb", amount: 10, category: "Utilities" },
+//     { id: 3, description: "ccc", amount: 10, category: "Utilities" },
+//     { id: 4, description: "ddd", amount: 10, category: "Utilities" },
+//   ]);
+
+//   const visibleExpenses = selectedCategory
+//     ? expenses.filter((e) => e.category === selectedCategory)
+//     : expenses;
+
+//   return (
+//     <div>
+//       <div className="mb-5">
+//         <ExpenseForm onSubmit={expense => setExpenses([...expenses, {...expense, id: expenses.length + 1}])} />
+//       </div>
+//       <div className="mb-3">
+//         <ExpenseFilter
+//           onSelectCategory={(category) => setSelectedCategory(category)}
+//         />
+//       </div>
+//       <ExpenseList
+//         expenses={visibleExpenses}
+//         onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
+//       />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// import {useRef} from "react";
+
+// function App(){
+//   const ref = useRef<HTMLInputElement>(null);
+
+//   useEffect
+
+//   if (ref.current) ref.current.focus();
+
+//   return (
+//     <div>
+//       <input ref={ref} type="text" className="form-control"/>
+//     </div>
+//   )
+// }
+
+// import { useEffect, useState } from "react";
+// import ProductList from "./components/ProductList";
+
+// function App() {
+//   const [category, setCategory] = useState("");
+//   //afterRender
+//   useEffect(() => {});
+
+//   return (
+//     <div>
+//       <select
+//         className="form-select"
+//         onChange={(event) => setCategory(event.target.value)}
+//       >
+//         <option value=""></option>
+//         <option value="Clothing">Clothing</option>
+//         <option value="Household">Household</option>
+//       </select>
+//       <ProductList category={category} />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+interface User {
+  id: number;
+  name: string;
+}
 
 function App() {
-  const ref = useRef<HTMLInputElement>(null);
-});
+  const [users, setUsers] = useState<User[]>([]);
 
-//afterRender
-useEffect(()=>{
-// Side effect
-if (ref.current) ref.current.focus();
-});
+  useEffect(() => {
+    axios
+      .get<User[]>("https://jsonplaceholder.typicode.com/users")
+      .then((res) => {
+        console.log(res.data);
+        setUsers(res.data);
+      });
+  }, []);
 
-useEffect(() =>{
-  document.title = 'My App';
-})
-
-return (
-  <div>
-    <input ref={ref} type="text" className="form-control"/>
-  </div>
-);
+  return (
+    <ul>
+      {users.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
+  );
 }
 
 export default App;
